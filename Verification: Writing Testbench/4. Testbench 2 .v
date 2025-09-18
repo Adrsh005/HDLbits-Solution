@@ -2,7 +2,7 @@ module top_module();
     logic clk;
     logic in;
     logic [2:0] s;
-	logic out;
+    logic out;
     q7 dut_instance (clk,in,s,out);
     initial begin
         clk = 1'b0;
@@ -16,15 +16,14 @@ module top_module();
         #30; in = 1'b0;
     end
     initial begin
-        s = 3'd2;  
-        @(posedge clk); 
-        @(posedge clk);   
+        s = 3'd2;       
+        @(negedge clk); 
         s = 3'd6;
-        @(posedge clk);    
+        @(negedge clk); 
         s = 3'd2;
-        @(posedge clk);    
+        @(negedge clk);
         s = 3'd7;
-        @(posedge clk);   
+        @(negedge clk);
         s = 3'd0;
     end
 
